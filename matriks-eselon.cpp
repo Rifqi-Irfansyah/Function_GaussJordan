@@ -125,10 +125,8 @@ void gaussJordan(int kolom, int baris, float matriks[100][100]) {
 void solusi(int kolom, int baris, float matriks[100][100]){
     cout << " \nSolusi Matriks nya:" << endl;
 
-    for (int i = 0; i < baris; ++i) {
-        cout << "x" << i+1 << " = ";
-        if(matriks[i][kolom-1] != 0)
-            cout << matriks[i][kolom-1];
+    for (int i = 0; i < kolom-1; ++i) {
+        cout << "x" << i+1 << " = " << matriks[i][kolom-1];
         for (int j = 0; j < kolom-1; j++)
         {
             if(j == i)
