@@ -118,6 +118,6 @@ void gaussJordan(int kolom, int baris, float matriks[100][100]) {
             }
         }
     }
-    menampilkanMatriks("Hasilnya : ", kolom, baris, matriks);
+    menampilkanMatriks(" Hasilnya : ", kolom, baris, matriks);
 
 }
