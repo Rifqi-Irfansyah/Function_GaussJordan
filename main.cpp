@@ -7,8 +7,8 @@ int main(){
     float matriksA[100][100];
 
     //HARDCODE
-    kolom = 5;
-    baris =4;
+    // kolom = 5;
+    // baris = 4;
 
     // matriksA[0][0] = 1;
     // matriksA[0][1] = -1;
@@ -35,10 +35,14 @@ int main(){
     // matriksA[3][3] = -3;
     // matriksA[3][4] = -3;
 
-    // NO HARDCODE
+    // NO HARDCODE (Rifqi)
+    // assignMatriks(kolom, baris, matriksA);
+    // menampilkanMatriks(" Struktur Matriks", kolom, baris, matriksA);
+    // gaussJordan(kolom, baris, matriksA);
+    // solusi(kolom, baris, matriksA);
+
+    // Inverse Matriks with Gauss Jordan (Fachry)
     assignMatriks(kolom, baris, matriksA);
-    menampilkanMatriks(" Struktur Matriks", kolom, baris, matriksA);
-    gaussJordan(kolom, baris, matriksA);
-    solusi(kolom, baris, matriksA);
+    inverseMatriks(kolom, baris, matriksA);
     return 0;
 }

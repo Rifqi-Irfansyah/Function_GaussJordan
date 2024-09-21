@@ -12,5 +12,6 @@ int menampilkanMatriks(const char *nama_matriks, int kolom, int baris, float mat
 int menampilkanStrukturMatriks(const char *nama_matriks, int kolom, int baris);
 void gaussJordan(int kolom, int baris, float matriks[100][100]);
 void solusi(int kolom, int baris, float matriks[100][100]);
+void inverseMatriks(int kolom, int baris, float matriks[100][100]);
 
 #endif
