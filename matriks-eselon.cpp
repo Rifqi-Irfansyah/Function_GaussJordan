@@ -122,6 +122,56 @@ void gaussJordan(int kolom, int baris, float matriks[100][100]) {
 
 }
 
+void gaussJordanInvers(int kolom, int baris, float matriks[100][100]) {
+    float augmented[100][100];
+
+    if (kolom != baris) {
+        cout << " Matriks tidak memiliki invers." << endl;
+        return;
+    }
+
+    for (int i = 0; i <kolom; i++) {
+        for (int j = 0; j <kolom; j++) {
+            augmented[i][j] = matriks[i][j];
+            if (i == j) {
+                augmented[i][j +kolom] = 1;
+            } else {
+                augmented[i][j +kolom] = 0;
+            }
+        }
+    }
+
+    for (int i = 0; i <kolom; i++) {
+        float pivot = augmented[i][i];
+        if (pivot == 0) {
+            cout << " Matriks tidak memiliki invers." << endl;
+            return;
+        }
+
+        for (int j = 0; j < 2 *kolom; j++) {
+            augmented[i][j] /= pivot;
+        }
+
+        for (int k = 0; k <kolom; k++) {
+            if (k != i) {
+                float faktor = augmented[k][i];
+                for (int j = 0; j < 2 *kolom; j++) {
+                    augmented[k][j] -= faktor * augmented[i][j];
+                }
+            }
+        }
+    }
+
+    float invers[100][100];
+    for (int i = 0; i <kolom; i++) {
+        for (int j = 0; j <kolom; j++) {
+            invers[i][j] = augmented[i][j + kolom];
+        }
+    }
+
+    menampilkanMatriks("\n Matriks Invers Gauss Jordan : ",kolom, baris, invers);
+}
+
 void solusi(int kolom, int baris, float matriks[100][100]){
     cout << " \nSolusi Matriks nya:" << endl;
 
